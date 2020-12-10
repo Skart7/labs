@@ -1,0 +1,75 @@
+// main: style.less
+
+.header{
+    background: @bgpurple;
+    box-shadow: 0 0 5px @purple;
+}
+.header.fixed{
+    position: fixed;
+    top: 0;
+    z-index: 450;
+    width: 1200px;
+    max-width: 100%;
+
+}
+.header_inner{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.header_left{
+    display: flex;
+    align-items: center;
+    margin-left: 10px;
+}
+.nav ul{
+    display: flex;
+}
+.nav ul li{
+    list-style: none;
+}
+.nav_link{
+    margin: 0 10px;
+    padding: 0 5px 5px 5px;
+    font-family: @title;
+    font-size: 16px;
+    cursor: pointer;
+    border-bottom: 3px solid transparent;
+    transition: .2s linear;
+    &:hover{
+        border-color: @purple;
+    }
+}
+
+//menu
+.menu_btn{
+    width: 50px;
+    height: 50px;
+    position: relative;
+    margin: 5px;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    border: 1px solid white;
+    border-radius: 5px;
+    &:hover{
+        background: @purple;
+    }
+}
+.menu_item,
+.menu_item:before,
+.menu_item:after {
+    content: "";
+    background: white;
+    height: 3px;
+    width: 35px;
+    border-radius: 15px;
+    position: absolute;
+}
+.menu_item:before{
+    top: 10px;
+}
+.menu_item:after{
+    top: -10px;
+}

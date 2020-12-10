@@ -1,0 +1,41 @@
+//main: style.less
+
+.sitebar{
+    position: fixed;
+    top: 0;
+    left: -255px;
+    width: 250px;
+    height: 100%;
+    background: @bgpurple;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    box-shadow: 0 0 15px @bgpurple;
+    transition: .25s linear;
+    z-index: -1000;
+}
+.sitebar.open{
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+.sitebar_title{
+    border-bottom: 1px solid white;
+    text-align: center; 
+}
+.sitebar_title img{
+    max-height: 60px;
+    width: auto;
+}
+.sitebar_nav{
+    padding: 20px 0;
+}
+.sitebar_nav ul li{
+    list-style: none;
+    padding: 15px 20px;
+    font-weight: 600;
+    width: 100%;
+    &:hover,&:focus{
+        background: @purple;
+    }
+}
