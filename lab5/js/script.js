@@ -1,70 +1,14 @@
-const btnMenu = document.querySelector('.menu_btn')
-const sitebar = document.querySelector('.sitebar')
-const overlay = document.querySelector('.overlay')
+const textarea = document.querySelector('#exampleFormControlTextarea1')
+const email = document.querySelector('#exampleFormControlInput1')
+const form = document.querySelector('#form')
 
-btnMenu.addEventListener('click', openMenu)
+form.addEventListener('submit', FORM)
 
-function openMenu(){
-    sitebar.classList.add('open')
-    activeOverlay()
+function FORM(){
+    email.value === '' ? email.style = "border: 3px solid red" : email.style = ""
+    textarea.value === '' ? textarea.style = "border: 3px solid red" : textarea.style = ""
+    if(email.value != '' && textarea.value != ''){
+        alert("Вас зовут: " + email.value + "\n" + "Вы отправили текст: " + textarea.value) 
+    }
+    
 }
-
-function closeMenu(){
-    sitebar.classList.remove('open')
-    removeOverlay()
-}
-
-function activeOverlay(){
-    overlay.classList.add('active')
-    overlay.addEventListener('click', function(){
-        closeMenu()
-    })
-}
-
-function removeOverlay(){
-    overlay.classList.remove('active')
-}
-
-
-
-//scroll to blocks
-
-function scrollTo(element){
-    window.scroll({
-        left: 0,
-        top: element.offsetTop,
-        behavior: 'smooth'
-    })
-}
-
-const nav_link = document.querySelectorAll('.nav_link')
-
-nav_link.forEach( event => {
-    event.addEventListener('click', function(){
-        let element = document.querySelector(this.dataset.scroll)
-        scrollTo(element)
-    })
-})
-
-const nav_link_sitebar = document.querySelectorAll('.nav_link_sitebar')
-
-nav_link_sitebar.forEach( event => {
-    event.addEventListener('click', function(){
-        let element = document.querySelector(this.dataset.scroll)
-        scrollTo(element)
-        closeMenu()
-    })
-})
-
-// header fixed
-
-const header = document.querySelector('.header')
-
-
-if(header.pageYOffset <= 61){
-    header.classList.remove('fixed')
-}else{
-    header.classList.add('fixed')
-}
-console.log(pageYOffset)
-
